@@ -6,9 +6,8 @@
 extends CharacterBody2D # The type of node this script works with.
 
 # HACK ME!
-@export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
-
+@export var speed = 300.0
+@export var jump_velocity = -400.0
 
 func _physics_process(delta): # _physics_process is a special function that runs every frame. delta is the amount of time since the last frame.
 	# GRAVITY
@@ -17,13 +16,13 @@ func _physics_process(delta): # _physics_process is a special function that runs
 
 	# JUMP
 	if Input.is_action_just_pressed("action") and is_on_floor(): # If [Action] (space or left click by default) was pressed AND we're on the ground, overwrite our up/down velocity.
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 
 	# SIDE-TO-SIDE MOVEMENT
 	var direction = Input.get_axis("left", "right") # Gives us a number between -1 and 1, with -1 being the left key pressed, and 1 being the right key pressed. If nothing (or both) are pressed, returns 0.
 	if not direction == 0: # If the direction ISN'T zero...
-		velocity.x = direction * SPEED # set that as our velocity
+		velocity.x = direction * speed # set that as our velocity
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED) # otherwise (i.e nothing is pressed), slow down until we hit zero
+		velocity.x = move_toward(velocity.x, 0, speed) # otherwise (i.e nothing is pressed), slow down until we hit zero
 
 	move_and_slide() # Moves according to velocity

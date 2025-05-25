@@ -1,26 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c81r51neumat8"]
-
-[ext_resource type="PackedScene" uid="uid://dap7iyabuq7t8" path="res://Collectible.tscn" id="1_r0du0"]
-[ext_resource type="Script" uid="uid://bgcx8av7ktuar" path="res://Code/move-8dir.gd" id="2_cm0pq"]
-[ext_resource type="Texture2D" uid="uid://bwekjjh16npt5" path="res://Images/Food/tile_0014.png" id="3_fos0i"]
+[gd_scene load_steps=2 format=3 uid="uid://c81r51neumat8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjcy3"]
 size = Vector2(15.3333, 15.9167)
 
 [node name="Main Scene" type="Node2D"]
 
-[node name="Area2D" parent="." instance=ExtResource("1_r0du0")]
-position = Vector2(226, 206)
-scale = Vector2(3, 3)
-
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(578, 301)
 scale = Vector2(3, 3)
-script = ExtResource("2_cm0pq")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_fos0i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 0.375)
