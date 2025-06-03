@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c81r51neumat8"]
+[gd_scene load_steps=3 format=3 uid="uid://c81r51neumat8"]
+
+[ext_resource type="Script" uid="uid://bgcx8av7ktuar" path="res://Code/move-8dir.gd" id="1_uu6xs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjcy3"]
 size = Vector2(15.3333, 15.9167)
@@ -6,12 +8,12 @@ size = Vector2(15.3333, 15.9167)
 [node name="Main Scene" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(578, 301)
+position = Vector2(578, 302)
 scale = Vector2(3, 3)
+script = ExtResource("1_uu6xs")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 0.375)
 shape = SubResource("RectangleShape2D_vjcy3")

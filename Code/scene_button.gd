@@ -7,7 +7,7 @@
 
 extends Button # This script works with all buttons
 
-@export var scene: PackedScene # Adds a field to the button's Inspector panel, allowing us to choose a scene
+@export_file("*.tscn") var scene # Adds a field to the button's Inspector panel, allowing us to choose a scene
 
 # Called when the button is created, usually when the scene starts. 
 func _ready():
@@ -15,4 +15,4 @@ func _ready():
 	
 # Switch to the chosen scene.
 func switch_to_scene():
-	get_tree().change_scene_to_packed(scene) # Changes the scene.
+	get_tree().change_scene_to_file(scene) # Changes the scene.
